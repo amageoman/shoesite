@@ -1,0 +1,25 @@
+table{
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+} 
+
+td,th{
+    
+    
+    padding-block: 30px;
+    border: 1px solid black;
+    /* background-color: #999; */
+    text-transform: capitalize;
+}
+
+td img{
+    width: 100px;
+    height: 60px;
+}
+
+.checkout{
+position: fixed;
+ right:30px;
+ bottom:30px;
+}

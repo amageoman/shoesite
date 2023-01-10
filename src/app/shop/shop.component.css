@@ -1,0 +1,20 @@
+.items{
+margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 1;
+    gap: 40px;
+    padding: 40px;
+}
+
+.card:hover{
+
+    box-shadow: 6px 6px 10px #404040;
+    transform: translateY(-10px);
+}
+
+.card h5{
+
+    text-transform: capitalize;
+}

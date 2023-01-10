@@ -7,7 +7,7 @@
     align-items: center;
     background-color: rgb(255, 255, 255) ;
     color:var(--text);
-    text-transform: uppercase;
+    text-transform:capitalize;
     border-bottom: 2px  solid var(--text);
     margin: auto;
     width: 100%;
@@ -27,7 +27,7 @@
     font-size: medium;
     text-decoration: none;
     padding: 5px 30px;
-    border-radius: 40px;
+    /* border-radius: 40px; */
     /* background-color: darkgray; */
     margin-inline: auto;
     border: 3px solid transparent;
@@ -39,6 +39,8 @@
     animation: hov 1s linear infinite;
     /* transition: 1s ease-in-out; */
     /* transform-origin:right; */
+
+    box-shadow: 3px 3px 7px #202020;
 }
 
 @keyframes hov{

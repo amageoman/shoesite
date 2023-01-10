@@ -24,7 +24,7 @@ padding: 30px;
    margin: 0;
    box-sizing: border-box;
    
-   background-color: rgb(134, 38, 38);
+   background-color: #252525;
 
 
     clip-path: polygon(0% 0%, 75% 0%, 95% 0%, 60% 100%, 0% 100%);
@@ -90,4 +90,56 @@ align-items: center;
         font-size: 15vw;
     }
 
+}
+
+
+.content{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 5px; */
+    flex-basis: 1;
+    align-items: stretch;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    
+}
+
+.content div{
+text-align: center;
+padding: 10px;
+min-height: 30vh;
+
+    width: 50%;
+    min-width:250px;
+   
+    display: grid;
+    place-items: center;
+
+}
+
+.content p{
+
+    font-size: xx-large;
+    font-style: italic;
+}
+
+.content img{
+
+    width:50%;
+    height: 30vh;
+
+}
+.content span{
+
+    background:linear-gradient(steelblue,hotpink);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-size: 40px;
+    font-style: oblique;
+    -webkit-text-stroke: 1px firebrick;
+
+  
 }

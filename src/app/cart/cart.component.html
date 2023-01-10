@@ -1,0 +1,38 @@
+<div *ngIf="items!=0, else elseblock">
+    <table >
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Color</th>
+                <th>Size</th>
+               <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let i of items">
+            <tr>
+    
+                <td>
+                    <img src={{i.img}} alt="">
+                </td>
+                <td>{{i.name}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.color}}</td>
+                <td>{{i.size}}</td>
+                
+                <td><button class="btn btn-danger" (click)="removefromcart(i.name)"><i class="fa-solid fa-trash-can"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success checkout" (click)="removeall()">Check Out</button>
+
+
+</div>
+
+  
+
+<ng-template #elseblock >
+    <h1 style=" width:100vw; height: 80vh; display: grid; place-items: center;" class="container w-50 text-center ">Your Cart is Empty</h1>
+</ng-template>
+

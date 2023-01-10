@@ -1,0 +1,41 @@
+
+<div class="item">
+  <div class="img">
+    <img src={{items.img}} alt="">
+  </div>
+  <div class="details">
+    <h2 class="text-danger" style="font-weight: 700; ">Nike {{items.name}}</h2>
+    <br>
+    <h5 style="font-style:oblique;">Rs. {{items.price}}</h5>
+    <br>
+
+    <p style=" font-weight: 500;">{{items.description}}</p>
+<br>
+
+  
+  <label for="color" >Color :</label>
+      <select class="form-select" aria-label="Default select example" id="color" #color >
+        <option *ngFor="let i of items.color" >{{i}}</option>
+        
+      </select>
+  
+  <br>
+      <label for="size">Size :</label>
+      <select class="form-select" aria-label="Default select example" id="size" #size>
+        <option *ngFor="let i of items.size" >{{i}}</option>
+        
+      </select>
+
+
+<br><br>
+    
+    <div class="button">
+      <button (click)="goback()" class="btn btn-primary ">Shop More</button>
+      <button (click)="addcart(items.name ,items.price,items.img,color.value,size.value)" class="btn btn-success ">Add to Cart</button>
+      
+    </div>
+
+</div>
+</div>
+
+    

@@ -1,0 +1,13 @@
+<div class="items">
+  <div *ngFor="let i of items">
+    <div class="card" style="width: 18rem;">
+      <img src={{i.img}} class="card-img-top" style="height: 30vh;" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nike {{i.name}}</h5>
+        <p class="card-text">{{i.description}}</p>
+        <p>Rs. {{i.price}}</p>
+        <button (click)="viewitem(i.name)" class="btn btn-success container">View Item</button>
+      </div>
+    </div>
+  </div>
+</div>
