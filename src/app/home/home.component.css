@@ -1,6 +1,7 @@
 .home{
 
-
+    
+    background-color: #ccc;
     max-width: 1600px;
     height: 90vh;
     
@@ -10,9 +11,13 @@
     flex-wrap: wrap;
     
 margin: auto;
+
+
 }
 
 .title{
+    
+    
 padding: 30px;
     display: grid;
     place-items: start;
@@ -20,14 +25,14 @@ padding: 30px;
     max-width: 900px;
     min-width: 300px;
     min-height: 50%;
-    border-radius: 50px;
+    /* border-radius: 50px; */
    margin: 0;
    box-sizing: border-box;
    
-   background-color: #252525;
+   background:linear-gradient( to right,rgb(6, 46, 78),rgb(130, 10, 70));
 
 
-    clip-path: polygon(0% 0%, 75% 0%, 95% 0%, 60% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 75% 0%, 95% 0%, 65% 100%, 0% 100%);
      
 }
 #main-title{
@@ -47,6 +52,7 @@ padding: 30px;
 }
 
 #sub-title{
+
 padding-left: 20px;
     font-size: 50px;
     text-align: center;
@@ -94,6 +100,8 @@ align-items: center;
 
 
 .content{
+    
+
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -102,7 +110,7 @@ align-items: center;
     align-items: stretch;
     justify-content: space-evenly;
     max-width: 1200px;
-    
+    margin-bottom: 30px;
 }
 
 .content div{
@@ -132,7 +140,7 @@ min-height: 30vh;
 }
 .content span{
 
-    background:linear-gradient(steelblue,hotpink);
+    background:linear-gradient(lime,springgreen);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -140,6 +148,16 @@ min-height: 30vh;
     font-size: 40px;
     font-style: oblique;
     -webkit-text-stroke: 1px firebrick;
-
+    
   
+}
+
+.off{
+
+    background:linear-gradient( rgb(6, 46, 78),rgb(130, 10, 70));
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+   
+    padding: 20px;
+    color: snow;
 }

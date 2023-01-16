@@ -7,7 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
 import {HttpClientModule} from '@angular/common/http';
-import { SingleviewComponent } from './singleview/singleview.component'
+import { SingleviewComponent } from './singleview/singleview.component';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SingleviewComponent } from './singleview/singleview.component'
     ShopComponent,
     CartComponent,
     SingleviewComponent,
+    FooterComponent,
     
   ],
   imports: [

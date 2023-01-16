@@ -11,11 +11,14 @@ import { Injectable, OnInit } from '@angular/core';
 export class DataserviceService  implements OnInit  {
 
   cartitems:any=[]
-
+   
+cost:any=0
   
   constructor(private http:HttpClient ) {
-    
+    setInterval(()=>{
+      this.loadcart()},500); 
    
+     
    }
 
    ngOnInit(): void {
@@ -42,7 +45,7 @@ export class DataserviceService  implements OnInit  {
   }
 
   addtocart(name:any,price:any,img:any,color:any,size:any){
-
+    
   
     const body={
       name,
@@ -51,10 +54,17 @@ export class DataserviceService  implements OnInit  {
       img,
       size
     }
-    alert("Nike "+body.name+" of size "+body.size+" and color "+body.color+" added to cart")
-    return this.http.post('http://localhost:3001/addtocart', body).subscribe(res=>{
-      res
-    })
+    
+    return this.http.post('http://localhost:3001/addtocart', body).subscribe((res:any)=>{
+      
+    
+    this.cost += res.price;
+    alert(res.message);
+    
+  },
+  res=>{
+    alert(res.error.message)
+  })
 
   }
  
@@ -64,11 +74,12 @@ export class DataserviceService  implements OnInit  {
     
     
 
-    return this.http.get('http://localhost:3001/loadcart',body).subscribe(res=>{
+    return this.http.get('http://localhost:3001/loadcart',body).subscribe((res:any)=>{
       this.cartitems=res;
       
 
-    })
+    });
+
     
 
   }
@@ -77,8 +88,8 @@ removefromcart(name:any){
   const body={name}
     
 
-  return this.http.post('http://localhost:3001/removeitem', body).subscribe(res=>{
-    res
+  return this.http.post('http://localhost:3001/removeitem', body).subscribe((res:any)=>{
+    this.cost-=res.price;
   })
 
 }
@@ -87,7 +98,7 @@ removefromcart(name:any){
 
 removeall(){
 
-
+this.cost=0
   const body={}
     
     

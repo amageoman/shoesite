@@ -8,10 +8,10 @@ margin: auto;
     padding: 40px;
 }
 
-.card:hover{
+.card:hover,.card:focus{
 
     box-shadow: 6px 6px 10px #404040;
-    transform: translateY(-10px);
+    
 }
 
 .card h5{

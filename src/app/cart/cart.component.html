@@ -1,4 +1,4 @@
-<div *ngIf="items!=0, else elseblock">
+<div  class="cart" *ngIf="items!=0, else elseblock">
     <table >
         <thead>
             <tr>
@@ -21,18 +21,76 @@
                 <td>{{i.color}}</td>
                 <td>{{i.size}}</td>
                 
-                <td><button class="btn btn-danger" (click)="removefromcart(i.name)"><i class="fa-solid fa-trash-can"></i></button></td>
+                <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" ><i class="fa-solid fa-trash-can"></i></button></td>
             </tr>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  
+                  <div class="modal-body text-center ">
+                    Are you sure?
+                  </div>
+                  <div class="modal-footer" style="border: none;">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="removefromcart(i.name)">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         </tbody>
+        
     </table>
-    <button class="btn btn-success checkout" (click)="removeall()">Check Out</button>
+    <div class="btns">
+        <button  class="btn btn-success removeall" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Remove All</button>
+    
 
+        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+             
+              <div class="modal-body text-center">
+                Are you sure?
+              </div>
+              <div class="modal-footer" style="border: none;">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="removeall()">Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <button type="button" class="btn btn-success checkout" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Check Out
+          </button>
+    </div>
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Payment</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          your total price is {{cost}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal" (click)="cancel()">Cancel</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="pay()">Pay</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
   
 
 <ng-template #elseblock >
-    <h1 style=" width:100vw; height: 80vh; display: grid; place-items: center;" class="container w-50 text-center ">Your Cart is Empty</h1>
+    <h1 style=" width:100vw; height: 60vh; display: grid; place-items: center;" class="container w-50 text-center ">Your Cart is Empty</h1>
 </ng-template>
 

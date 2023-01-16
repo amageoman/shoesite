@@ -11,13 +11,15 @@
 
     <button type="button" class="btn btn-primary position-relative" (click)="cart()">
         <i class="fas fa-cart-shopping"></i>
-        <!-- <div *ngIf="items!=0, else elseblock" >
-            <span  class="position-absolute top-0 start-100 translate-middle p-2 bg-primary border border-light rounded-circle">
-              
-              <span class="visually-hidden" >unread messages</span>
-            </span>
+        <div *ngIf="items!=0, else elseblock" >
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{items}}
+            <span class="visually-hidden">unread messages</span>
+          </span>
         </div>
-        <ng-template #elseblock></ng-template> -->
+        <ng-template #elseblock>
+          
+        </ng-template>
       </button>
     </div>
 </div>

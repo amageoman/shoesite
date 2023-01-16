@@ -9,27 +9,50 @@ import { DataserviceService } from '../services/dataservice.service';
 })
 export class CartComponent   implements OnInit {
 items:any
+
+cost:any=this.ds.cost;
+
   constructor(private ds:DataserviceService, private route:Router){
 
-    this.ds.loadcart()
-    this.items=this.ds.cartitems
 
+      
+      this.items=this.ds.cartitems
+    
+    
+    this.ds.loadcart()
     
   }
+
 
   ngOnInit(){
     
   }
     removefromcart(name:any){
 this.ds.removefromcart(name)
-alert("Nike "+name+" removed")
+// alert("Nike "+name+" removed")
 this.route.navigateByUrl('shopping')
     }
 
   
     removeall(){
-      alert("Emptied Cart")
+      // alert("Emptied Cart")
       this.route.navigateByUrl('shopping')
       this.ds.removeall()
     }
+
+
+    cancel(){
+      this.route.navigateByUrl('cart')
+    }
+
+pay(){
+  
+  this.ds.removeall();
+  this.route.navigateByUrl('')
+  
 }
+
+
+
+
+  }
